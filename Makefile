@@ -1,7 +1,7 @@
 API_KEY := $(shell cat ~/.ftapi 2>/dev/null)
 GIT_HASH := $(shell git rev-parse --short HEAD)
-TEST_HOST := "ft-next-concepts-api-branch-${GIT_HASH}"
-TEST_URL := "http://ft-next-concepts-api-branch-${GIT_HASH}.herokuapp.com/__conepts/top-stories/uk"
+TEST_HOST := "ft-concepts-api-branch-${GIT_HASH}"
+TEST_URL := "http://ft-concepts-api-branch-${GIT_HASH}.herokuapp.com/__concepts/top-stories/uk"
 ELASTIC_SEARCH_URL := $(shell cat ~/.nextElasticSearchUrl 2>/dev/null)
 
 # export PORT=3005
