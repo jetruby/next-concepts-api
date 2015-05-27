@@ -10,8 +10,8 @@ app.get('/__gtg', function(req, res) {
 	res.status(200).end();
 });
 
-app.get('/__concepts/current/uk', require('./controllers/concepts'));
-app.get('/__concepts/current/international', require('./controllers/concepts'));
+app.get('/__concepts/top-stories/uk', require('./controllers/concepts'));
+app.get('/__concepts/top-stories/international', require('./controllers/concepts'));
 app.get('/', function (req, res) {
 	res.send(404);
 });

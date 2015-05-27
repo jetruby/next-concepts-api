@@ -23,7 +23,7 @@ describe('smoke tests for the app', function () {
 	});
 	it('Should serve a uk current themes feed', function (done) {
 		request
-			.get(host + '/__concepts/current/uk', function (req, res) {
+			.get(host + '/__concepts/top-stories/uk', function (req, res) {
 				expect(res.headers['content-type']).to.match(/json/);
 				expect(res.statusCode).to.equal(200);
 				done();
@@ -32,7 +32,7 @@ describe('smoke tests for the app', function () {
 
 	it('Should serve an international current themes feed', function (done) {
 		request
-			.get(host + '/__concepts/current/international', function (req, res) {
+			.get(host + '/__concepts/top-stories/international', function (req, res) {
 				expect(res.headers['content-type']).to.match(/json/);
 				expect(res.statusCode).to.equal(200);
 				done();
