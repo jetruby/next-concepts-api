@@ -1,7 +1,7 @@
 API_KEY := $(shell cat ~/.ftapi 2>/dev/null)
 GIT_HASH := $(shell git rev-parse --short HEAD)
-TEST_HOST := "ft-engels-branch-${GIT_HASH}"
-TEST_URL := "http://ft-engels-branch-${GIT_HASH}.herokuapp.com/uk"
+TEST_HOST := "ft-next-concepts-api-branch-${GIT_HASH}"
+TEST_URL := "http://ft-next-concepts-api-branch-${GIT_HASH}.herokuapp.com/__conepts/top-stories/uk"
 ELASTIC_SEARCH_URL := $(shell cat ~/.nextElasticSearchUrl 2>/dev/null)
 
 # export PORT=3005
@@ -29,9 +29,6 @@ ifeq ($(API_KEY),)
 endif
 	export ELASTIC_SEARCH_URL=${ELASTIC_SEARCH_URL}; export HOSTEDGRAPHITE_APIKEY=123; export apikey=${API_KEY}; export ENVIRONMENT=development; nbt run --local
 
-build:
-	nbt build --dev
-
 build-production:
 	nbt build --skip-layout-checks
 
@@ -51,10 +48,7 @@ provision:
 	nbt configure ft-next-engels-v002 ${TEST_HOST} --overrides "NODE_ENV=branch,DEBUG=*"
 	nbt deploy-hashed-assets
 	nbt deploy ${TEST_HOST}
-	make smoke
 
 tidy:
 	nbt destroy ${TEST_HOST}
 
-smoke:
-	export TEST_URL=${TEST_URL}; nbt nightwatch tests/browser/tests/*

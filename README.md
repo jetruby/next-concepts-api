@@ -8,7 +8,6 @@ Concpets and themes api for next.ft.com
 git clone https://github.com/Financial-Times/next-concepts-api.git
 cd next-concepts-api
 make install
-make build
 ```
 
 ## Dependencies
