@@ -45,7 +45,7 @@ deploy:
 
 provision:
 	nbt provision ${TEST_HOST}
-	nbt configure ft-next-engels-v002 ${TEST_HOST} --overrides "NODE_ENV=branch,DEBUG=*"
+	nbt configure ft-next-concepts-api ${TEST_HOST} --overrides "NODE_ENV=branch,DEBUG=*"
 	nbt deploy-hashed-assets
 	nbt deploy ${TEST_HOST}
 
