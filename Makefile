@@ -40,13 +40,11 @@ clean:
 
 deploy:
 	nbt configure
-	nbt deploy-hashed-assets
 	nbt deploy
 
 provision:
 	nbt provision ${TEST_HOST}
 	nbt configure ft-next-concepts-api ${TEST_HOST} --overrides "NODE_ENV=branch,DEBUG=*"
-	nbt deploy-hashed-assets
 	nbt deploy ${TEST_HOST}
 
 tidy:
