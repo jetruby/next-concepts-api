@@ -40,12 +40,12 @@ clean:
 
 deploy:
 	nbt configure
-	nbt deploy
+	nbt deploy --docker
 
 provision:
 	nbt provision ${TEST_HOST}
 	nbt configure ft-next-concepts-api ${TEST_HOST} --overrides "NODE_ENV=branch,DEBUG=*"
-	nbt deploy ${TEST_HOST} --skip-enable-preboot
+	nbt deploy ${TEST_HOST} --skip-enable-preboot --docker
 
 tidy:
 	nbt destroy ${TEST_HOST}
