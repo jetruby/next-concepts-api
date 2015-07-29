@@ -30,7 +30,7 @@ endif
 	export ELASTIC_SEARCH_URL=${ELASTIC_SEARCH_URL}; export HOSTEDGRAPHITE_APIKEY=123; export apikey=${API_KEY}; export ENVIRONMENT=development; nbt run --local
 
 build-production:
-	nbt build --skip-layout-checks
+	nbt build
 	nbt about
 
 watch:
