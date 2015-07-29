@@ -11,7 +11,7 @@ ELASTIC_SEARCH_URL := $(shell cat ~/.nextElasticSearchUrl 2>/dev/null)
 install:
 	origami-build-tools install --verbose
 
-test:
+test: build-production
 	nbt verify --skip-layout-checks
 	export ELASTIC_SEARCH_URL='http://123.foundcluster.com:9200/v1_api/item'; export HOSTEDGRAPHITE_APIKEY=123; export ENVIRONMENT=production; mocha --reporter spec -i tests/server/
 
@@ -31,6 +31,7 @@ endif
 
 build-production:
 	nbt build --skip-layout-checks
+	nbt about
 
 watch:
 	nbt build --dev --watch
