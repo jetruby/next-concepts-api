@@ -6,7 +6,7 @@
     "express-errors-handler": "^1.0.0",
     "forever": "^0.12.0",
     "ft-api-client": "^4.0.1",
-    "ft-next-express": "^10.0.0",
+    "ft-next-express": "^12.0.0",
     "ft-poller": "https://github.com/Financial-Times/ft-poller/archive/v2.0.0.tar.gz",
     "request": "^2.55.0",
     "xml2js": "^0.4.4"
