@@ -1,4 +1,4 @@
-# Next Concepts API [![Build Status](https://travis-ci.org/Financial-Times/next-concepts-api.svg)](https://travis-ci.org/Financial-Times/next-concepts-api)
+# Next Concepts API [![Circle CI](https://circleci.com/gh/Financial-Times/next-concepts-api.svg?style=svg)](https://circleci.com/gh/Financial-Times/next-concepts-api)
 
 Concpets and themes api for next.ft.com
 
