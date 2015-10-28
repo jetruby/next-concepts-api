@@ -24,25 +24,19 @@ module.exports = function (region, elastic, sample, limit) {
 
 	topStories.forEach(function (a) {
 		if (a) {
-			a.allTags.forEach(function (tag) {
+			a.metadata.forEach(function (tag) {
 				var score = taxonomyScores[tag.taxonomy];
-				if (tags[tag.id]) {
-					tags[tag.id].count += score;
+				if (tags[tag.idV1]) {
+					tags[tag.idV1].count += score;
 				} else {
-					tags[tag.id] = {
+					tags[tag.idV1] = {
 						tag: tag,
 						count: score
 					};
 				}
 
-				if (tag.id === a.primarySection.id) {
-					tags[tag.id].count += 1.5;
-				}
-
-				if (a.primaryTheme) {
-					if (tag.id === a.primaryTheme.id) {
-						tags[tag.id].count += 2.5;
-					}
+				if(tag.primary) {
+					tags[tag.idV1].count += 2;
 				}
 			});
 		}
