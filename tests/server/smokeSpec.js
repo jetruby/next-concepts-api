@@ -3,7 +3,7 @@
 require('es6-promise').polyfill();
 var app = require('../../server/app');
 
-var expect  = require('chai').expect;
+var expect = require('chai').expect;
 var request = require('request');
 
 var host = 'http://localhost:3001';
