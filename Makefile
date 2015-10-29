@@ -9,10 +9,10 @@ TEST_HOST := "ft-concepts-api-branch-${GIT_HASH}"
 install:
 	origami-build-tools install --verbose
 
-test:
-	build-production
+test: verify build-production unit-test
+
+unit-test:
 	export ELASTIC_SEARCH_URL='http://123.foundcluster.com:9200/v1_api/item'; export HOSTEDGRAPHITE_APIKEY=123; export ENVIRONMENT=production; mocha --reporter spec -i tests/server/
-	verify
 
 test-debug:
 	mocha --debug-brk --reporter spec -i tests/server/
