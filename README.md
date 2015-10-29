@@ -1,6 +1,6 @@
 # Next Concepts API [![Circle CI](https://circleci.com/gh/Financial-Times/next-concepts-api.svg?style=svg)](https://circleci.com/gh/Financial-Times/next-concepts-api)
 
-Concpets and themes api for next.ft.com
+Concepts and themes api for next.ft.com
 
 ## Installation
 
