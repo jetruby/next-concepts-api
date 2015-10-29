@@ -1,7 +1,8 @@
 /*global console*/
 'use strict';
-var Poller = require('ft-poller');
 
+const Poller = require('ft-poller');
+const logger = require('ft-next-express').logger;
 const ft = require('next-ft-api-client').content;
 
 var Page = function () {
@@ -25,7 +26,7 @@ Page.prototype.init = function(pageId, contentArea, noBody) {
 
 				ft(opts)
 					.then(function (articles) {
-						console.log('fetched ' + articles.length + ' article' + (articles.length === 1 ? '' : 's') + ' from ' + pageId);
+						logger.info('fetched ' + articles.length + ' article' + (articles.length === 1 ? '' : 's') + ' from ' + pageId);
 						this.items = articles;
 					}.bind(this));
 			}
@@ -36,7 +37,7 @@ Page.prototype.init = function(pageId, contentArea, noBody) {
 	});
 
 	this.poller.on('error', function (err) {
-		console.log('Polling error:', err);
+		logger.error(err, {event: 'POLLING_ERROR'});
 	});
 
 	return this;

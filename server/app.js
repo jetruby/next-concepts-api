@@ -1,10 +1,9 @@
 'use strict';
 
-var express = require('ft-next-express');
-
-var port = process.env.PORT || 3001;
-
-var app = module.exports = express();
+const express = require('ft-next-express');
+const port = process.env.PORT || 3001;
+const app = module.exports = express();
+const logger = require('ft-next-express').logger;
 
 app.get('/__gtg', function(req, res) {
 	res.status(200).end();
@@ -17,5 +16,5 @@ app.get('/', function (req, res) {
 });
 
 module.exports.listen = app.listen(port, function() {
-	console.log('Listening on ' + port);
+	logger.info('Listening on ' + port);
 });
